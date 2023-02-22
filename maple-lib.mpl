@@ -103,3 +103,15 @@ export euclid, euclidExt, ring_zero_div, ring_units, ring_comple_zero_div, mod_m
         end do;
         return ans;
     end proc:
+
+    eulerPhi := proc(m::integer)
+    description "Computation of the Euler Phi/ Euler Totient alogrithm to retrieve the number of integers relatively prime to the integer m";
+    local i::integer, phi::integer;
+        phi := 0;
+        for i from 1 to m do
+            if gcd(m,i) = 1 then
+                phi := phi + 1;
+            end if;
+        end do;
+        return phi;
+    end proc:
